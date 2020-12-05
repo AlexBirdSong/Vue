@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h1>Пробный текст</h1>
-        <app-input></app-input>
+        <h1>{{message}}</h1>
+        <app-input :msg="message" @messChange="message = $event"></app-input>
     </div>
 </template>
 
@@ -10,6 +10,13 @@
     import Input from './field.vue'
 
     export default {
+
+        data(){
+            return{
+                message: 'Пробный текст'
+            }
+        },
+
         components: {
             'app-input': Input
         }
